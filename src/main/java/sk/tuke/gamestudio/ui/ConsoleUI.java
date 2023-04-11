@@ -77,6 +77,7 @@ public class ConsoleUI {
                     }
                 }
 
+
                 Rating rating = new Rating(playerName, "TiltMaze", playerRating, new Date());
                 ratingService.setRating(rating);
                 break;
