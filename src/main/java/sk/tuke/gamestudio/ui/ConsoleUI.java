@@ -84,7 +84,8 @@ public class ConsoleUI {
                 System.out.println("Average rating of game: " + ratingService.getAverageRating("TiltMaze"));
                 break;
             case 'm':
-                System.out.println("Your rating is: "+ ratingService.getRating(playerName, "TiltMaze"));
+                System.out.println("Your rating is: "+ ratingService.getRating("TiltMaze",playerName));
+                break;
         }
 
         gameState = GameState.INIT;

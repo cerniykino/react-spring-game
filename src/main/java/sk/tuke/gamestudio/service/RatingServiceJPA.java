@@ -31,10 +31,10 @@ public class RatingServiceJPA implements RatingService {
 
     @Override
     public int getRating(String game, String player) throws RatingException {
-        return entityManager.createQuery("SELECT rating FROM Rating r WHERE r.game = :game AND r.player = :player")
+        return (int)entityManager.createQuery("SELECT r.rating FROM Rating r WHERE r.game = :game AND r.player = :player")
                 .setParameter("game", game)
                 .setParameter("player", player)
-                .executeUpdate();
+                .getSingleResult();
     }
 
     @Override
