@@ -1,15 +1,13 @@
 package sk.tuke.gamestudio.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.NamedQuery;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.Date;
 
 @Entity
+
 //@NamedQuery(name = "Comment.resetComment",
 //            query = "DELETE FROM Comment ")
 //@NamedQuery(name = "Comment.addComment",
@@ -24,6 +22,7 @@ public class Comment implements Serializable {
     private String player;
     private String game;
     private String comment;
+    //@Column(name = "commented_on")
     private Date commentedOn;
 
     public Comment() {

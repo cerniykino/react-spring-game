@@ -17,13 +17,13 @@ public class ScoreServiceRestClient implements ScoreService {
     private final String url = "http://localhost:8080/api/score";
 
 
-    //@Autowired(required = false)
-    private RestTemplate restTemplate = new RestTemplate();
+    @Autowired
+    private RestTemplate restTemplate; //= new RestTemplate();
 
-    @PostConstruct
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
+//    @PostConstruct
+//    public RestTemplate restTemplate() {
+//        return new RestTemplate();
+//    }
     @Override
     public void addScore(Score score) {
         restTemplate.postForEntity(url, score, Score.class);

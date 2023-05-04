@@ -16,8 +16,9 @@ public class RatingServiceRest {
     public double getAverageRating(@PathVariable String game){
         return ratingService.getAverageRating(game);
     }
+
     @GetMapping( "/{game}/{player}")
-    public int getRating(@PathVariable("game") String game, @PathVariable("player") String player){
+    public int getRating(@PathVariable String game, @PathVariable String player){
         return ratingService.getRating(game, player);
     }
     @PostMapping

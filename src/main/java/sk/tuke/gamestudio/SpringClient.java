@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;;
 import org.springframework.context.annotation.FilterType;
+import org.springframework.web.client.RestTemplate;
 import sk.tuke.gamestudio.level.BaseLevel;
 import sk.tuke.gamestudio.level.Level1;
 import sk.tuke.gamestudio.service.*;
@@ -58,4 +59,7 @@ public class SpringClient {
         //return new CommentServiceJPA();
         return new CommentServiceRestClient();
     }
+
+    @Bean
+    public RestTemplate restTemplate(){return new RestTemplate();}
 }

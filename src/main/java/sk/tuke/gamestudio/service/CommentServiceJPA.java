@@ -15,12 +15,7 @@ public class CommentServiceJPA implements CommentService{
 
     @Override
     public void addComment(Comment comment) throws CommentException {
-        entityManager.createNativeQuery("INSERT INTO Comment (player, game, comment, commented_on) VALUES (?, ?, ?, ?)")
-                .setParameter(1, comment.getPlayer())
-                .setParameter(2, comment.getGame())
-                .setParameter(3, comment.getComment())
-                .setParameter(4, comment.getCommentedOn())
-                .executeUpdate();
+        entityManager.persist(comment);
     }
 
     @Override
@@ -33,6 +28,6 @@ public class CommentServiceJPA implements CommentService{
 
     @Override
     public void reset() throws CommentException {
-        entityManager.createNamedQuery("DELETE FROM comment").executeUpdate();
+        entityManager.createQuery("DELETE FROM Comment").executeUpdate();
     }
 }

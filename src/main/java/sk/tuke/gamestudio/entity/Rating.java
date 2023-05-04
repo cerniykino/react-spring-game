@@ -1,10 +1,7 @@
 package sk.tuke.gamestudio.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.NamedQuery;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -23,10 +20,10 @@ public class Rating implements Serializable {
     @Id
     @GeneratedValue
     private int ident;
-
     private String player;
     private String game;
     private int rating;
+    //@Column(name = "rated_on")
     private Date ratedOn;
 
     public Rating() {

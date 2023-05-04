@@ -1,5 +1,6 @@
 package sk.tuke.gamestudio.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import sk.tuke.gamestudio.entity.Rating;
@@ -8,8 +9,8 @@ public class RatingServiceRestClient implements RatingService{
 
     private String url = "http://localhost:8080/api/rating";
 
-    //@Autowired(required = false)
-    private RestTemplate restTemplate = new RestTemplate();
+    @Autowired
+    private RestTemplate restTemplate ;//= new RestTemplate();
 
     @Override
     public void setRating(Rating rating) throws RatingException {
@@ -17,8 +18,8 @@ public class RatingServiceRestClient implements RatingService{
     }
 
     @Override
-    public double getAverageRating(String game) throws RatingException {
-        return restTemplate.getForEntity(url + "/" + game , Double.class).getBody();
+    public int getAverageRating(String game) throws RatingException {
+        return restTemplate.getForEntity(url + "/" + game , Integer.class).getBody();
     }
 
     @Override
