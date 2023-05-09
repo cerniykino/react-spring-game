@@ -1,4 +1,7 @@
 package sk.tuke.gamestudio.core;
 
-public class Wall implements Tile {
+import java.io.Serializable;
+
+public class Wall implements Tile, Serializable {
+
 }

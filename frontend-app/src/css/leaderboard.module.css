@@ -1,0 +1,60 @@
+.scoreContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    height: 500px;
+    width: 40%;
+}
+
+.scoreCard {
+    background-color: #2d3e50;
+    padding: 0 0 0 30px;
+    width: 100%;
+    height: 70px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.username {
+    padding: 0 0 0;
+    font-size: 30px;
+    line-height: 70px;
+    color: #fff;
+}
+
+.title {
+    color: #fff8dc;
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.points {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 50px;
+    line-height: 70px;
+    background: #dc3546;
+    color: #fff;
+    width: 120px;
+    text-align: center;    cursor: pointer;
+
+}
+
+.background {
+    background-color: #9b8975;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 50vh;
+}

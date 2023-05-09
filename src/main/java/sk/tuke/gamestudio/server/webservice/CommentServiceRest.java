@@ -5,10 +5,12 @@ import org.springframework.web.bind.annotation.*;
 import sk.tuke.gamestudio.entity.Comment;
 import sk.tuke.gamestudio.service.CommentService;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/comment")
+@CrossOrigin(origins = "http://localhost:3000")
 public class CommentServiceRest {
 
     @Autowired

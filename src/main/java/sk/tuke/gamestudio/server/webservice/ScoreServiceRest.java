@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/score")
+@CrossOrigin(origins = "http://localhost:3000")
 public class ScoreServiceRest {
     @Autowired
     private ScoreService scoreService;

@@ -1,0 +1,204 @@
+.button {
+    width: 50px;
+    height: 50px;
+    background-image: url("/ButtonArrow.png");
+    background-position: center center;
+    background-size: 170%;
+    background-origin: content-box; /* keeps the background image in its original position */
+    padding: 0; /* removes padding */
+    border: none;
+    border-radius: 50%; /* creates a circular mask */
+    cursor: pointer;
+    margin: 10px;
+}
+
+.circularLeft{
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+
+    rotate: -90deg;
+}
+.circularRight{
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    rotate: 90deg;
+}
+.circularUp{
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    rotate: 0deg;
+
+}
+.circularDown{
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    rotate: 180deg;
+}
+
+.background {
+    backdrop-filter: blur(10px);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.background::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(7px); /* Adjust this value to control the intensity of the blur */
+
+}
+.game {
+    width: 50%;
+    text-align: center;
+}
+
+
+.gameField {
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.pageContent {
+    flex: 1;
+    overflow: auto;
+    padding: 20px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 50vh;
+
+
+}
+
+.commentsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.commentCard {
+    background-color: #dacfcf;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.commentHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.userName {
+    font-size: 1.5em;
+}
+
+.commentDate {
+    font-size: 0.9em;
+    color: #f30505;
+}
+
+.commentContent {
+    font-size: 1em;
+    color: #333;
+    white-space: pre-wrap;
+}
+
+.tile {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    overflow: visible;
+    box-sizing: border-box;
+    margin: -5px 5px 5px -5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.player{
+    background-color: #593C4E;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.wall {
+    background-color: black;
+    position: absolute;
+}
+
+.reached{
+    background-color: #593C4E;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+
+.topWall {
+    background-color: #2D3E50;
+    width: 100%;
+    height: 7px;
+    top: -5px;
+    border-radius: 20px;
+}
+
+.bottomWall {
+    background-color: #2D3E50;
+    width: 100%;
+    height: 7px;
+    bottom: -5px;
+    border-radius: 20px;
+}
+
+.leftWall {
+    background-color: #2D3E50;
+    width: 7px;
+    height: 100%;
+    left: -5px;
+    border-radius: 20px;
+}
+
+.rightWall {
+    background-color: #2D3E50;
+    width: 7px;
+    height: 100%;
+    right: -5px;
+    border-radius: 30px;
+}
+
+.fieldFrame{
+    border: 3px solid #000;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #eee;
+}
+
+
+

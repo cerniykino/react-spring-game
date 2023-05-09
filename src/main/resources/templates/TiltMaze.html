@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"></html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GameStudio</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" href="../css/game.css">
+</head>
+<body>
+<h1>TiltMaze</h1>
+<!--<div th:utext="${@tiltMazeController.getHtmlField}"/>-->
+
+
+<div id="root"></div>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel" src="../static/js/App.js"></script>
+<div id="gameField"></div>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react?dev",
+    "react-dom/client": "https://esm.sh/react-dom/client?dev"
+  }
+}
+</script>
+
+<button class="button" onclick="button('West')">Left</button>
+<button class="button" onclick="button('East')">Right</button>
+<button class="button" onclick="button('North')">Up</button>
+<button class="button" onclick="button('South')">Down</button>
+
+<div id="react"></div>
+<script src="../js/Button.js"></script>
+<script src="../static/js/Button.js"></script>
+
+<button class="button" onclick="updateScores()">Update Scores</button>
+<script type="text/babel" data-type="module" src="../static/js/App.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<div id="score-table"></div>
+<div id="commentFormContainer">
+    <form id="commentForm" >
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="comment">Comment:</label>
+        <textarea id="comment" name="comment" required></textarea>
+        <button type="submit" id="submit" >Submit Comment</button>
+    </form>
+</div>
+</body>
+</html>

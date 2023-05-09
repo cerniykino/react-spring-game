@@ -22,6 +22,16 @@ public class Level4 extends BaseLevel {
     };
 
     public Level4() {
-        super(12, 12, 1, 1, 10, 24, field);
+        super(12, 12, 1, 1, 10, 24);
+        Tile[][] field = {
+                {new EmptySpace(), new EmptySpace(), new EmptySpace(), new EmptySpace(), new EmptySpace()},
+                {new EmptySpace(), new EmptySpace(), new Wall(), new EmptySpace(), new EmptySpace()},
+                {new Wall(), new EmptySpace(), new Wall(), new EmptySpace(), new EmptySpace()},
+                {new Goal(), new Wall(), new Wall(), new EmptySpace(), new EmptySpace()},
+                {new EmptySpace(), new EmptySpace(), new EmptySpace(), new EmptySpace(), new EmptySpace()}
+
+        };
+        super.setField(field);
+        super.setPlayerPresence(true);
     }
 }
