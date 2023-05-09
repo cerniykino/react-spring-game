@@ -46,6 +46,7 @@ export const Game = () => {
             document.removeEventListener('keydown', handleKeyPress);
         };
     }, [handleKeyPress]);
+
     const handleClick = async (direction) => {
         try {
             const response = await axios.get('http://localhost:8080/api/refresh-field?direction=' + direction);
