@@ -31,30 +31,8 @@ border-spacing: 0;
   background-color: #45a049;
 }
 
-.star {
-  background-image: url("../images/star.png");
-  background-size: cover;
-  width: 50px;
-  height: 50px;
-}
-.empty{
-  width: 50px;
-  height: 50px;
-}
-.ball{
-  background-image: url("../images/picture-49-1406547579.jpg");
-  background-size: cover;
-  width: 50px;
-  height: 50px;
-}
 
 
-.wall {
-  background-image: url("../images/wall.png");
-  background-size: cover;
-  width: 50px;
-  height: 50px;
-}
 
 
 

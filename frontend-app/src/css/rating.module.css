@@ -1,0 +1,58 @@
+/* rating.module.css */
+.ratingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+}
+
+.react-rating {
+    display: flex;
+}
+
+.emptyStar {
+    color: gray;
+    margin: 0 2px;
+    cursor: pointer;
+}
+
+.fullStar {
+    color: #593C4E;
+    margin: 0 2px;
+    cursor: pointer;
+}
+
+.background {
+    background-color: #9b8975;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 50vh;
+}
+
+/* rating.module.css */
+.userRatingText {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.submit {
+    background-color: #2d3e50;
+    border-radius: 12px;
+    border: 0;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    margin-top: 38px;
+    text-align: center;
+    width: 100%;
+    margin: 20px;
+}

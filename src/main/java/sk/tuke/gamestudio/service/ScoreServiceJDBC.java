@@ -32,6 +32,11 @@ public class ScoreServiceJDBC implements ScoreService {
     }
 
     @Override
+    public Score getScore(String player, String game) throws ScoreException {
+        return null;
+    }
+
+    @Override
     public List<Score> getTopScores(String game) {
         try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement statement = connection.prepareStatement(SELECT);

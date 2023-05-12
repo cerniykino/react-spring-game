@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from "react";
-import styles from '../css/stylesheeeet.module.css';
+import styles from '../css/commentform.module.css';
 import { defaults } from "axios";
 
 function TableComment() {
@@ -18,7 +18,7 @@ function TableComment() {
     }, []);
 
     return (
-        <div className="App">
+        <div className={styles.background}>
             {loading ? (
                 <div>Loading...</div>
             ) : (
@@ -29,7 +29,6 @@ function TableComment() {
                             <div key={user.id} className={styles.commentCard}>
                                 <div className={styles.commentHeader}>
                                     <div className={styles.userName}>{user.player}</div>
-                                    <div className={styles.commentDate}>{user.commentedOn}</div>
                                 </div>
                                 <div className={styles.commentContent}>{user.comment}</div>
                             </div>

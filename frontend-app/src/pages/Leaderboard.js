@@ -25,6 +25,7 @@ function Leaderboard() {
                     <div key={user.id} className={styles.scoreCard}>
                         <div className={styles.username}>{user.player}</div>
                         <div className={styles.points}>{user.points}</div>
+                        <div className={styles.gap}></div>
                     </div>
                 ))}
             </div>

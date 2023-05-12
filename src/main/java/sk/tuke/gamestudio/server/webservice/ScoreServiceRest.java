@@ -20,6 +20,8 @@ public class ScoreServiceRest {
         return scoreService.getTopScores(game);
     }
 
+    @GetMapping("/{game}/{player}")
+    public Score getMyScores(@PathVariable String player, @PathVariable String game){ return scoreService.getScore(player, game);}
     @PostMapping
     public void addScore(@RequestBody Score score) {
         scoreService.addScore(score);

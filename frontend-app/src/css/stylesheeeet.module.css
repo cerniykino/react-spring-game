@@ -1,52 +1,89 @@
 .button {
     width: 50px;
     height: 50px;
-    background-image: url("/ButtonArrow.png");
-    background-position: center center;
-    background-size: 170%;
-    background-origin: content-box; /* keeps the background image in its original position */
-    padding: 0; /* removes padding */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
     border: none;
-    border-radius: 50%; /* creates a circular mask */
     cursor: pointer;
     margin: 10px;
+    background-color: transparent;
+    position: relative;
+    color: #593C4E;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+
+.restartText {
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.restartText:hover {
+    color: #ff9900;
 }
 
 .circularLeft{
     position: relative;
     overflow: hidden;
-    border-radius: 50%;
 
     rotate: -90deg;
 }
 .circularRight{
     position: relative;
     overflow: hidden;
-    border-radius: 50%;
+
     rotate: 90deg;
 }
 .circularUp{
     position: relative;
     overflow: hidden;
-    border-radius: 50%;
+
     rotate: 0deg;
 
 }
 .circularDown{
     position: relative;
     overflow: hidden;
-    border-radius: 50%;
+
     rotate: 180deg;
 }
 
 .background {
-    backdrop-filter: blur(10px);
-    background-size: cover;
-    background-repeat: no-repeat;
-
+    background-color: #9b8975;
     width: 100%;
     height: 100%;
     position: absolute;
+}
+
+.winnerBanner {
+
+    padding: 20px;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.winnerText {
+    color: #cdc1a9;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.winnerText2 {
+    color: #cdc1a9;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .background::before {
@@ -88,40 +125,6 @@
 
 }
 
-.commentsContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.commentCard {
-    background-color: #dacfcf;
-    border-radius: 10px;
-    padding: 30px;
-}
-
-.commentHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.userName {
-    font-size: 1.5em;
-}
-
-.commentDate {
-    font-size: 0.9em;
-    color: #f30505;
-}
-
-.commentContent {
-    font-size: 1em;
-    color: #333;
-    white-space: pre-wrap;
-}
 
 .tile {
     position: relative;
@@ -154,8 +157,8 @@
 
 .reached{
     background-color: #593C4E;
-    width: 50px;
-    height: 50px;
+    width: 20px;
+    height: 20px;
     position: absolute;
 }
 
@@ -198,6 +201,136 @@
     padding: 10px;
     margin-top: 20px;
     background-color: #eee;
+}
+
+@media (min-width: 768px) {
+    .game {
+        width: 75%;
+    }
+}
+
+@media (min-width: 992px) {
+    .game {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .game {
+        width: 50%;
+    }
+}
+
+
+.arrowButtons {
+    display: inline-block;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+
+}
+
+.row{
+    flex-direction: column;
+}
+
+.restartText{
+    font-size: 30px;
+    color: rgba(239, 203, 203, 0.1);
+}
+
+.round {
+    position: relative;
+    border: 2px solid #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+
+}
+.roundWest{
+    rotate: 180deg;
+}
+.roundNorth{
+    rotate: 270deg;
+}
+.roundSouth{
+    rotate: 90deg;
+}
+
+.cta {
+    width: 100%;
+    cursor: pointer;
+    position: absolute;
+}
+
+.cta .arrow {
+    left: 30%;
+    position: absolute;
+    bottom: 0;
+    margin-left: 0px;
+    width: 12px;
+    height: 12px;
+    background-size: contain;
+    top: 15px;
+}
+
+
+
+.arrow {
+    position: absolute;
+    bottom: 0;
+    margin-left: 0px;
+    width: 12px;
+    height: 12px;
+    background-size: contain;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.segunda {
+    margin-left: 8px;
+}
+
+.next {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHN0eWxlPi5zdDB7ZmlsbDojZmZmfTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMxOS4xIDIxN2MyMC4yIDIwLjIgMTkuOSA1My4yLS42IDczLjdzLTUzLjUgMjAuOC03My43LjZsLTE5MC0xOTBjLTIwLjEtMjAuMi0xOS44LTUzLjIuNy03My43UzEwOSA2LjggMTI5LjEgMjdsMTkwIDE5MHoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzE5LjEgMjkwLjVjMjAuMi0yMC4yIDE5LjktNTMuMi0uNi03My43cy01My41LTIwLjgtNzMuNy0uNmwtMTkwIDE5MGMtMjAuMiAyMC4yLTE5LjkgNTMuMi42IDczLjdzNTMuNSAyMC44IDczLjcuNmwxOTAtMTkweiIvPjwvc3ZnPg==);
+}
+
+.round:hover .arrow {
+    animation-name: bounceAlpha;
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.round:hover .arrow.primera {
+    animation-name: bounceAlpha;
+    animation-duration: 1.4s;
+    animation-delay: 0.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+
+@keyframes bounceAlpha {
+    0% {
+        opacity: 1;
+        transform: translateX(0px) scale(1);
+    }
+    25% {
+        opacity: 0;
+        transform: translateX(10px) scale(0.9);
+    }
+    26% {
+        opacity: 0;
+        transform: translateX(-10px) scale(0.9);
+    }
+    55% {
+        opacity: 1;
+        transform: translateX(0px) scale(1);
+    }
 }
 
 

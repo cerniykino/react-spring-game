@@ -30,6 +30,11 @@ public class ScoreServiceRestClient implements ScoreService {
     }
 
     @Override
+    public Score getScore(String player, String game) throws ScoreException {
+        return null;
+    }
+
+    @Override
     public List<Score> getTopScores(String gameName) {
         return Arrays.asList(restTemplate.getForEntity(url + "/" + gameName, Score[].class).getBody());
     }

@@ -5,14 +5,16 @@ import sk.tuke.gamestudio.level.*;
 public class Game {
     private final LevelInterface level;
     private final Player player;
-
+    private int steps;
     public Game(LevelInterface level) {
         this.level = level;
         this.player = new Player(this.level.getPlayerX(), this.level.getPlayerY());
+        this.steps = 0;
     }
 
     public int update(Direction direction) {
-        int steps = 0;
+        if(isWon())
+            return -1;
         int newX = player.getX();
         int newY = player.getY();
         boolean moved = false;
@@ -29,10 +31,9 @@ public class Game {
                 if(isValidMove(newX, newY)){
                     player.setX(newX);
                     player.setY(newY);}
-                steps++;
                 if (newX >= 0 && newX < level.getWidth() && newY >= 0 && newY < level.getHeight()) {
                     changeLevelState();}
-                else break;
+
 
                 switch (direction) {
                     case SOUTH -> newY++;
@@ -41,8 +42,8 @@ public class Game {
                     case EAST -> newX++;
                 }
             }
+            steps++;
         }
-
         return steps;
     }
 
@@ -107,5 +108,9 @@ public class Game {
 
     public boolean isWon() {
         return level.getGoals() == 0;
+    }
+
+    public int steps(){
+        return this.steps;
     }
 }

@@ -32,14 +32,16 @@ export default function CommentForm() {
             console.error("Error submitting comment");
         }
     };
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         const game = "TiltMaze";
         const player =localStorage.getItem("username");
         const commentText = `${comment}`;
 
-        submitComment(game, player, commentText);
+        await submitComment(game, player, commentText);
     };
+
+
     if(localStorage.getItem("service") === 'true'){
     return (
         <div className={`${styles.background} ${styles.center}`}>
@@ -64,7 +66,7 @@ export default function CommentForm() {
      );}
     else
         return (
-            <div className={styles.background}>
+            <div className={`${styles.background} ${styles.center}`}>
                 <div className={styles.formContainer}>
                     <div className={styles.title}>
                         You must be registered to leave a comment

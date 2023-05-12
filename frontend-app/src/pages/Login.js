@@ -56,7 +56,7 @@ function Login() {
         <div className={styles.container}>
             <form onSubmit={activeForm === 'signin' ? handleSubmitLogin : handleSubmitRegister} className={styles.loginForm}>
                 <div className={styles.switchContainer}>
-                    <form className={styles.toggle}>
+                    <div className={styles.toggle}>
                         <input
                             type="radio"
                             id="choice1"
@@ -86,9 +86,7 @@ function Login() {
                         >
                             Sign up
                         </label>
-
-
-                    </form>
+                    </div>
                 </div>
                 <h2 className={styles.title}>{activeForm === 'signin' ? 'Login' : 'Register'}</h2>
                 <label htmlFor="email" className={styles.label}>
