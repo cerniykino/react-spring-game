@@ -1,4 +1,11 @@
 # Start a client side (React)
+
+### 
+```bash
+cd frontend-app
+```
+or just open "frontend-app" folder
+
 ### `npm start`
 
 Runs the client side app in the development mode.\
